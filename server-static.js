@@ -15,13 +15,20 @@ app.use(express.static(__dirname + '/vendor/dist'));
 const server  = http.createServer(app);
 
 var source = {
+  width     : 640,
+  height    : 480,
+
+  video_path     : "samples/stream.264",
+  video_duration : 58,
+};
+/*
+var source = {
   width     : 480,
   height    : 270,
 
   video_path     : "samples/admiral.264",
   video_duration : 58,
 };
-
 
 source = {
   width     : 960,
@@ -30,6 +37,7 @@ source = {
   video_path     : "samples/out.h264",
   video_duration : 58,
 };
+*/
 
 
 

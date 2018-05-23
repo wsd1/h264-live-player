@@ -11,19 +11,55 @@
 
   <!-- provide WSAvcPlayer -->
     <script type="text/javascript" src="http-live-player.js">;</script>
+    <script type="text/javascript" src="pixi.js">;</script>
     <script type="text/javascript">
 
-var canvas = document.createElement("canvas");
-document.body.appendChild(canvas);
 
-// Create h264 player
-var uri = "ws://" + document.location.host;
-var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35);
-wsavc.connect(uri);
+      
+    var canvas = document.createElement("canvas");
+    document.body.appendChild(canvas);
 
 
-//expose instance for button callbacks
-window.wsavc = wsavc;
+/*
+
+  var renderer = new PIXI.autoDetectRenderer(640, 480, { view: canvas });
+  var bunny = PIXI.Sprite.fromImage('bunny.png')
+  var stage = new PIXI.Container();
+
+  // center the sprite's anchor point
+  bunny.anchor.set(0.5);
+
+  // move the sprite to the center of the screen
+  bunny.x = 200;
+  bunny.y = 300;
+
+  stage.addChild(bunny);
+  renderer.render(stage);
+
+
+  //animate();
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // just for fun, let's rotate mr rabbit a little
+    bunny.rotation += 0.1;
+
+    // render the container
+    renderer.render(stage);
+  }
+
+
+*/
+
+
+    // Create h264 player
+ var uri = 'ws://' + document.location.hostname + ":8000/live/stream.flv";
+    var wsavc = new WSAvcPlayer(canvas, "webgl", 1, 35);
+    wsavc.connect(uri);
+
+
+    //expose instance for button callbacks
+    window.wsavc = wsavc;
 
     </script>
   </body>

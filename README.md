@@ -1,3 +1,19 @@
+# 说明
+
+websocket + flv + broadway 
+测试代码，添加了flv的解码，可以配合 NMS使用。
+参考了flv.js
+
+缺省配置开启 NMS，推流；
+
+本项目 vendor 路径，npm i ，npm run dist
+public路径，hs，开页面，即可
+
+pixi用于测试canvas特殊效果暂未完成。
+
+----
+
+
 # Motivation
 
 This is a very simple h264 video player (that can run on live stream) for your browser.
